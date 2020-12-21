@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <title>iBook</title>
+</head>
+  <style>
+  #topon{
+      width: 90%;
+      height: 37px;
+      background-color: #adad85;
+      margin-left: 5%;
+  }
+  .topo{
+    opacity: 0.95;
+    position: relative;
+    left: 5%;
+    width: 90%;
+    height: 100px;
+    background-color: #F5DA81;
+    border-radius: 20px;
+  }
+  .topo ul{
+    position:relative;
+    left: 20%;
+    width: 70%;
+    list-style-type: none;
+    height: 100px;
+  }
+  .topo li{
+    float: right;
+  }
+  .topo li a{
+    line-height: 4;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 18px 18px;
+    text-decoration: none;
+
+  }
+  .topo ul li a:hover{
+    background-color: #DBA901;
+  }
+  .topo h1{
+    position: absolute;
+    top: 15%;
+    margin-left: 3%;
+    float: left;
+    padding-right: 100px;
+    color: white;
+  }
+  .principal{
+    opacity: 0.95;
+    position: relative;
+    top:20px;
+    left: 5%;
+    width: 61%;
+    height: 1010px;
+    background-color: #F5DA81;
+    float: left;
+    border-radius: 20px;
+  }
+  .text{
+    position: relative;
+    top:50px;
+    left: 5%;
+    width: 90%;
+    height: 900px;
+    background-color:#DBA901;
+    float: left;
+    border-radius: 20px;
+    font-family:'Sanseriffic';
+  }
+  .text p{
+    font-size: 20px;
+    color: black;
+    width: 500px;
+    margin-left: 1%;
+  }
+  .text section{
+    position: relative;
+    left: 5px;
+    overflow: hidden;
+  }
+  .second1{
+    width: 28%;
+    height: 550px;
+    background-color:white;
+    position: relative;
+    right: 5%;
+    top:20px;
+    float: right;
+    border-radius: 20px;
+  }
+  .carousel {
+    width: 100%;
+    height: 100%;
+    transform: translateZ(0);
+  }
+
+  .carousel input {
+    position: absolute;
+    left: -10000px;
+  }
+
+  .carousel__stage {
+    overflow: hidden;
+    font-size: 0;
+    white-space: nowrap;
+    width: 100%;
+    height: 100%;
+    transition: text-indent 600ms;
+    position: relative;
+    border-radius: 20px;
+  }
+
+  .carousel__item {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    text-indent: 0;
+    opacity: 0.6;
+    text-align: center;
+    border-radius: 20px;
+  }
+
+  .carousel__image {
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    border-radius: 20px;
+  }
+
+  .carousel__next,
+  .carousel__prev {
+    display: none;
+    position: absolute;
+    top: 50%;
+    color: #FFF;
+    background: rgba(255, 255, 255, 0.15);
+    z-index: 1;
+    font-size: 1rem;
+    padding: 20px;
+    cursor: pointer;
+  }
+
+  .carousel__prev {
+    left: 0;
+  }
+
+  .carousel__prev:after {
+    content: ' << ';
+    display: inline-block;
+  }
+
+  .carousel__next {
+    right: 0;
+  }
+
+  .carousel__next:after {
+    content: ' >> ';
+    display: inline-block;
+  }
+
+  #carousel1:checked ~ .carousel__stage .carousel__item:nth-child(1),
+  #carousel2:checked ~ .carousel__stage .carousel__item:nth-child(2),
+  #carousel3:checked ~ .carousel__stage .carousel__item:nth-child(3),
+  #carousel4:checked ~ .carousel__stage .carousel__item:nth-child(4)
+  #carousel5:checked ~ .carousel__stage .carousel__item:nth-child(5) {
+    opacity: 1;
+  }
+
+  #carousel1:checked ~ .carousel__stage {
+    text-indent: 0;
+  }
+
+  #carousel2:checked ~ .carousel__stage {
+    text-indent: -100%;
+  }
+
+  #carousel3:checked ~ .carousel__stage {
+    text-indent: -200%;
+  }
+
+  #carousel4:checked ~ .carousel__stage {
+    text-indent: -300%;
+  }
+
+  #carousel5:checked ~ .carousel__stage {
+    text-indent: -400%;
+  }
+
+  #carousel1:checked ~ .carousel__stage .carousel__item:nth-child(1) .carousel__prev,
+  #carousel1:checked ~ .carousel__stage .carousel__item:nth-child(1) .carousel__next,
+  #carousel2:checked ~ .carousel__stage .carousel__item:nth-child(2) .carousel__prev,
+  #carousel2:checked ~ .carousel__stage .carousel__item:nth-child(2) .carousel__next,
+  #carousel3:checked ~ .carousel__stage .carousel__item:nth-child(3) .carousel__prev,
+  #carousel3:checked ~ .carousel__stage .carousel__item:nth-child(3) .carousel__next,
+  #carousel4:checked ~ .carousel__stage .carousel__item:nth-child(4) .carousel__prev,
+  #carousel4:checked ~ .carousel__stage .carousel__item:nth-child(4) .carousel__next,
+  #carousel5:checked ~ .carousel__stage .carousel__item:nth-child(5) .carousel__prev,
+  #carousel5:checked ~ .carousel__stage .carousel__item:nth-child(5) .carousel__next
+  {
+    display: block;
+  }
+  .second2{
+    opacity: 1;
+    width: 28%;
+    height: 450px;
+    background-color:#F5DA81;
+    position: relative;
+    right: 5%;
+    top:30px;
+    float: right;
+    border-radius: 20px;
+  }
+  footer {
+    margin-top: 1040px;
+    text-align: center;
+    padding: 1.5em;
+    background-color: #4d4d4d;
+    color: #f1f1f1;
+  }
+  body{
+    background-image: url('./images/fundo1.jpg');
+  }
+  img{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+  }
+@-webkit-keyframes pisca {
+  0% {opacity: 1;}
+  50% {opacity: 0;}
+  100% {opacity: 1;}
+  }
+  .pisca {-webkit-transition: .1s;}
+  .pisca:hover {-webkit-animation: pisca .1s alternate infinite linear;}
+  </style>
+  <body>
+    <nav class="topo">
+      <h1>iBook</h1>
+      <ul>
+        <li ><a href="cadastros.html">Cadastro</a>
+        <li ><a href="videos.html">Videos</a>
+        <li ><a href="tabliv.html">Tabela de Livros</a>
+        <li ><a href="cont.html">Contato</a>
+      </ul>
+    </nav>
+    <div class="principal">
+      <div class="text">
+        <p><b>Bem-vindo(a) usuário(a)</b></p> <br>
+        <section> Você é um daqueles apaixonados por literatura e não consegue ficar um
+          único mês sequer sem ler um livro? Porém a correria do cotidiano não permite a ida à uma biblioteca
+          com calma... Nós sabemos como é. Mas você está no lugar certo, após você se cadastrar no nosso sistema (clicando
+          em "Cadastro" no nosso menu), você está apto para entrar em contato com a gente aqui da iBook  (selecionando o botão "Contato" no nosso menu). Você poderá entrar
+          em contato para <strong>alugar livros que estejam disponíveis no momento</strong>. Após contato conosco, você receberá o livro em sua residência e ficará conforme o tempo que foi estipulado durante o contato,
+          além disso você poderá também <strong>disponibilizar livros</strong> para nosso catálogo, possibilitando que sejam aproveitados por outras pessoas apaixonadas por livros.
+           <br>
+          <br>
+          Nosso catálogo está disponível na página "Tabela de Livros", podendo ser acessada pelo nosso menu. Lá é informado todos os livros que possuímos, sendo atualizado em tempo real por nossa equipe.
+          Antes de entrar em contato com nossa equipe desejando alugar um livro, verifique se o livro está disponível no momento. Esperamos que nossa rede cresça cada vez mais, englobando cada vez mais pessoas e
+          com cada vez mais livros em nosso catálogo. Para isso contamos também com sua ajuda, disponibilizando aquele seu livro que está parado à tempos na estante de casa... Ele pode
+          ser bastante útil para diversas pessoas.
+          <br>
+          <br>
+          Tanto a leitura quanto a escrita são práticas sociais de suma importância para o desenvolvimento da cognição humana.
+          Ambas proporcionam o desenvolvimento do intelecto e da imaginação, além de promoverem a aquisição de conhecimentos.
+          Dessa maneira, quando lemos ocorrem diversas ligações no cérebro que nos permitem desenvolver o raciocínio. Além disso, com essa atividade aguçamos nosso senso crítico
+          por meio da capacidade de interpretação.
+       <br>
+       <br>
+       <p><b>Benefícios da Leitura</b></p> <br>
+       Muitos são os benefícios que a leitura proporciona: desenvolvimento da imaginação, da criatividade, da comunicação, bem como o aumento do vocabulário, conhecimentos gerais e do senso crítico.
+       Além desses benefícios, com a leitura exercitamos nosso cérebro, o que facilita a interpretação de textos e leva à maior a competência (habilidade) na escrita.
+       <br>
+       <br>
+
+       Ao ler o indivíduo adquire maior repertório, ampliando e expandindo seus horizontes cognitivos. Para além disso, estudos apontam que o ato de ler é muito prazeroso na medida em que reduz o stress ao mesmo tempo que estimula reflexões.
+       Por esse motivo, a leitura deve ser incentivada desde a educação primária. Incentivar os filhos pequenos em casa e criar hábitos são chaves importantes para que as crianças desenvolvam o
+       gosto pela leitura. Uma dica é levá-los nas bibliotecas, livrarias ou mesmo contar histórias para eles.
+      <br>
+      <br>
+      Visando sempre deixar nossos usuários por dentro, nossa equipe atualiza constantemente a nossa página de vídeos (disponível no nosso menu), diversos vídeos com o enfoque na leitura são postados, desde dicas para você conseguir ler mais, até reflexões de como a leitura pode ser importante na nossa vida.
+       </div>
+    </div>
+    <div class="second1">
+      <section class="carousel">
+        <input type="radio" name="carousel" id="carousel1" checked="checked" />
+        <input type="radio" name="carousel" id="carousel2" />
+        <input type="radio" name="carousel" id="carousel3" />
+        <input type="radio" name="carousel" id="carousel4" />
+        <input type="radio" name="carousel" id="carousel5" />
+
+        <main class="carousel__stage">
+          <aside class="carousel__item">
+            <img class="carousel__image" src="https://images.unsplash.com/photo-1509291985095-788b32582a81?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3df807fb97311a00d38399243f18a4ab&auto=format&fit=crop&w=634&q=80" alt="" />
+            <label for="carousel2" class="carousel__next"></label>
+          </aside>
+
+          <aside class="carousel__item">
+            <label for="carousel1" class="carousel__prev"></label>
+            <img class="carousel__image" src="https://images.unsplash.com/photo-1530612077338-1cbb105de5f3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=989355c61aeb8fa42cf75bc297c12d9e&auto=format&fit=crop&w=1534&q=80" alt="" />
+            <label for="carousel3" class="carousel__next"></label>
+          </aside>
+
+          <aside class="carousel__item">
+            <label for="carousel2" class="carousel__prev"></label>
+            <img class="carousel__image" src="https://images.unsplash.com/photo-1495640452828-3df6795cf69b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=dd2d718dc2ceeb7e89ba414d7fdbf315&auto=format&fit=crop&w=634&q=80" alt="" />
+            <label for="carousel4" class="carousel__next"></label>
+          </aside>
+
+          <aside class="carousel__item">
+            <label for="carousel3" class="carousel__prev"></label>
+            <img class="carousel__image" src="https://images.unsplash.com/photo-1513001900722-370f803f498d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4aee62005c689d72ace8e9d9465b71ae&auto=format&fit=crop&w=634&q=80" alt="" />
+            <label for="carousel5" class="carousel__next"></label>
+          </aside>
+
+          <aside class="carousel__item">
+            <label for="carousel4" class="carousel__prev"></label>
+            <img class="carousel__image" src="https://images.unsplash.com/photo-1517148892120-4d2da39c8dc1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="" />
+            <label for="carousel1" class="carousel__next"></label>
+          </aside>
+        </main>
+      </section>
+    </div>
+    <div class="second2">
+      <a target=_"blank" href="LINK"><img src="./images/texto.jpg" class="pisca"/></a>
+    </div>
+  </body>
+  <footer>Guilherme Maciel&#9400;</footer>
+</html>
